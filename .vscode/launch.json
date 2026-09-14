@@ -2,16 +2,44 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: ShareX",
-            "type": "dotnet",
+            "name": "C#: ShareX (x64)",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/ShareX/ShareX.csproj"
+            "preLaunchTask": "build ShareX (x64)",
+            "program": "${workspaceFolder}/ShareX/bin/Debug/win-x64/ShareX.exe",
+            "cwd": "${workspaceFolder}/ShareX/bin/Debug/win-x64",
+            "console": "internalConsole",
+            "stopAtEntry": false
         },
         {
-            "name": "C#: ShareX.ImageEditor.App",
-            "type": "dotnet",
+            "name": "C#: ShareX.ImageEditor.App (x64)",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/ShareX.ImageEditor.App/ShareX.ImageEditor.App.csproj"
+            "preLaunchTask": "build ShareX.ImageEditor.App (x64)",
+            "program": "${workspaceFolder}/ShareX.ImageEditor.App/bin/Debug/win-x64/ShareX.ImageEditor.App.exe",
+            "cwd": "${workspaceFolder}/ShareX.ImageEditor.App/bin/Debug/win-x64",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "C#: ShareX (ARM64)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build ShareX (ARM64)",
+            "program": "${workspaceFolder}/ShareX/bin/Debug/win-arm64/ShareX.exe",
+            "cwd": "${workspaceFolder}/ShareX/bin/Debug/win-arm64",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "C#: ShareX.ImageEditor.App (ARM64)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build ShareX.ImageEditor.App (ARM64)",
+            "program": "${workspaceFolder}/ShareX.ImageEditor.App/bin/Debug/win-arm64/ShareX.ImageEditor.App.exe",
+            "cwd": "${workspaceFolder}/ShareX.ImageEditor.App/bin/Debug/win-arm64",
+            "console": "internalConsole",
+            "stopAtEntry": false
         }
     ]
 }

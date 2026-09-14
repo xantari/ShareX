@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Controls;
-using Avalonia.Media;
-using ShareX.ImageEditor.Core.Abstractions;
-using ShareX.ImageEditor.Core.Annotations;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
+using Avalonia.Controls;
+using Avalonia.Media;
+using ShareX.ImageEditor.Core.Abstractions;
+using ShareX.ImageEditor.Core.Annotations;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels;
 
@@ -385,6 +385,10 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
 
     public ICommand ExitEditorCommand => _viewModel.ExitEditorCommand;
 
+    public ICommand OpenSettingsDialogCommand => _viewModel.OpenSettingsDialogCommand;
+
+    public bool ShowSettingsMenuItem => _viewModel.ShowSettingsMenuItem;
+
     public void ExecuteToolbarItem(ToolbarCustomizationItemViewModel item) => _viewModel.ExecuteToolbarItem(item);
 
     private void OnRecentImageFilesChanged(object? sender, NotifyCollectionChangedEventArgs e)
@@ -474,6 +478,9 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
                 break;
             case nameof(MainViewModel.ShowFileMenu):
                 OnPropertyChanged(nameof(ShowFileMenu));
+                break;
+            case nameof(MainViewModel.ShowSettingsMenuItem):
+                OnPropertyChanged(nameof(ShowSettingsMenuItem));
                 break;
             case nameof(MainViewModel.HasRecentImageFiles):
                 OnPropertyChanged(nameof(HasRecentImageFiles));

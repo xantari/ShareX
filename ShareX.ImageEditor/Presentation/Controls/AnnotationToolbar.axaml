@@ -105,6 +105,14 @@
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SettingsEllipsis}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.OpenSettingsDialogCommand}"
+                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowSettingsMenuItem}">
+                                                    <MenuItem.Icon>
+                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static icons:LucideIcons.settings}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <Separator IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowSettingsMenuItem}"/>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
                                                           InputGesture="Escape">
@@ -115,14 +123,16 @@
                                             </MenuFlyout>
                                         </Button.Flyout>
                                     </Button>
-                                    <Button Classes="toolbar-button"
-                                            Tag="{Binding}"
-                                            Classes.active="{Binding IsActive}"
-                                            Click="OnToolbarItemClick"
-                                            PointerPressed="OnToolbarItemPointerPressed"
-                                            IsVisible="{Binding IsRegularButton}"
-                                            ToolTip.Tip="{Binding ToolTip}"
-                                            Content="{Binding Icon}"/>
+                                    <controls:ToolbarItemHost Caption="{Binding ToolTip}"
+                                                              IsVisible="{Binding IsRegularButton}">
+                                        <Button Classes="toolbar-button"
+                                                Tag="{Binding}"
+                                                Classes.active="{Binding IsActive}"
+                                                Click="OnToolbarItemClick"
+                                                PointerPressed="OnToolbarItemPointerPressed"
+                                                ToolTip.Tip="{Binding ToolTip}"
+                                                Content="{Binding Icon}"/>
+                                    </controls:ToolbarItemHost>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -132,26 +142,34 @@
                                 Spacing="4"
                                 IsVisible="{Binding ShowEditingActions, ElementName=AnnotationToolbarRoot}">
                         <Border Width="1" Background="{DynamicResource ShareX.Brush.Separator}"/>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding CanUndo}"
-                                Click="OnUndoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}"
-                                Content="{x:Static theming:EditorIcons.ActionUndo}"/>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding CanRedo}"
-                                Click="OnRedoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}"
-                                Content="{x:Static theming:EditorIcons.ActionRedo}"/>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding HasSelection}"
-                                Click="OnDeleteClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}"
-                                Content="{x:Static theming:EditorIcons.ActionDelete}"/>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding HasAnnotations}"
-                                Click="OnClearClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}"
-                                Content="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                        <controls:ToolbarItemHost>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding CanUndo}"
+                                    Click="OnUndoClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}"
+                                    Content="{x:Static theming:EditorIcons.ActionUndo}"/>
+                        </controls:ToolbarItemHost>
+                        <controls:ToolbarItemHost>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding CanRedo}"
+                                    Click="OnRedoClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}"
+                                    Content="{x:Static theming:EditorIcons.ActionRedo}"/>
+                        </controls:ToolbarItemHost>
+                        <controls:ToolbarItemHost>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding HasSelection}"
+                                    Click="OnDeleteClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}"
+                                    Content="{x:Static theming:EditorIcons.ActionDelete}"/>
+                        </controls:ToolbarItemHost>
+                        <controls:ToolbarItemHost>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding HasAnnotations}"
+                                    Click="OnClearClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}"
+                                    Content="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                        </controls:ToolbarItemHost>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
@@ -187,119 +205,135 @@
                                    Width="24"/>
                     </Border>
 
-                    <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
-                                                  SelectedColor="{Binding SelectedColorBrush, Mode=TwoWay}"
-                                                  Height="40"
-                                                  IsVisible="{Binding ShowBorderColor}"
-                                                  ShowBorderHole="True"
-                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bordercolor}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowBorderColor}">
+                        <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
+                                                      SelectedColor="{Binding SelectedColorBrush, Mode=TwoWay}"
+                                                      Height="40"
+                                                      ShowBorderHole="True"
+                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bordercolor}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:ColorPickerDropdown x:Name="FillColorPicker"
-                                                  SelectedColor="{Binding FillColorBrush, Mode=TwoWay}"
-                                                  Height="40"
-                                                  IsVisible="{Binding ShowFillColor}"
-                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fillcolor}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowFillColor}">
+                        <controls:ColorPickerDropdown x:Name="FillColorPicker"
+                                                      SelectedColor="{Binding FillColorBrush, Mode=TwoWay}"
+                                                      Height="40"
+                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fillcolor}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:ColorPickerDropdown x:Name="TextColorPicker"
-                                                  SelectedColor="{Binding TextColorBrush, Mode=TwoWay}"
-                                                  Height="40"
-                                                  IsVisible="{Binding ShowTextColor}"
-                                                  ShowTextLabel="True"
-                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Textcolor}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowTextColor}">
+                        <controls:ColorPickerDropdown x:Name="TextColorPicker"
+                                                      SelectedColor="{Binding TextColorBrush, Mode=TwoWay}"
+                                                      Height="40"
+                                                      ShowTextLabel="True"
+                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Textcolor}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:WidthPickerDropdown x:Name="StrokeWidthPicker"
-                                                  SelectedWidth="{Binding StrokeWidth, Mode=TwoWay}"
-                                                  Height="40"
-                                                  IsVisible="{Binding ShowThickness}"
-                                                  ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Thickness}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowThickness}">
+                        <controls:WidthPickerDropdown x:Name="StrokeWidthPicker"
+                                                      SelectedWidth="{Binding StrokeWidth, Mode=TwoWay}"
+                                                      Height="40"
+                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Thickness}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:BorderStylePickerDropdown x:Name="BorderStylePicker"
-                                                        BorderStyleOptions="{Binding AvailableBorderStyles}"
-                                                        SelectedBorderStyle="{Binding SelectedBorderStyle, Mode=TwoWay}"
-                                                        MinWidth="92"
-                                                        MaxWidth="168"
-                                                        Height="40"
-                                                        IsVisible="{Binding ShowBorderStyle}"
-                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Borderstyle}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowBorderStyle}">
+                        <controls:BorderStylePickerDropdown x:Name="BorderStylePicker"
+                                                            BorderStyleOptions="{Binding AvailableBorderStyles}"
+                                                            SelectedBorderStyle="{Binding SelectedBorderStyle, Mode=TwoWay}"
+                                                            MinWidth="92"
+                                                            MaxWidth="168"
+                                                            Height="40"
+                                                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Borderstyle}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:CornerRadiusPickerDropdown x:Name="CornerRadiusPicker"
-                                                         SelectedCornerRadius="{Binding CornerRadius, Mode=TwoWay}"
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowCornerRadius}">
+                        <controls:CornerRadiusPickerDropdown x:Name="CornerRadiusPicker"
+                                                             SelectedCornerRadius="{Binding CornerRadius, Mode=TwoWay}"
+                                                             Height="40"
+                                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cornerradius}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowFontFamily}">
+                        <controls:FontFamilyPickerDropdown x:Name="FontFamilyPicker"
+                                                           FontFamilyOptions="{Binding AvailableFontFamilies}"
+                                                           SelectedFontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
+                                                           MinWidth="180"
+                                                           MaxWidth="240"
+                                                           Height="40"
+                                                           ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontfamily}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowTextHorizontalAlignment}">
+                        <controls:TextHorizontalAlignmentPickerDropdown x:Name="TextHorizontalAlignmentPicker"
+                                                                        TextHorizontalAlignmentOptions="{Binding AvailableTextHorizontalAlignments}"
+                                                                        SelectedTextHorizontalAlignment="{Binding SelectedTextHorizontalAlignment, Mode=TwoWay}"
+                                                                        Height="40"
+                                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Horizontalalignment}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowArrowStyle}">
+                        <controls:ArrowStylePickerDropdown x:Name="ArrowStylePicker"
+                                                           ArrowStyleOptions="{Binding AvailableArrowStyles}"
+                                                           SelectedArrowStyle="{Binding SelectedArrowStyle, Mode=TwoWay}"
+                                                           MinWidth="80"
+                                                           MaxWidth="160"
+                                                           Height="40"
+                                                           ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Arrowstyle}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowCursorType}">
+                        <controls:CursorTypePickerDropdown x:Name="CursorTypePicker"
+                                                           CursorTypeOptions="{Binding AvailableCursorTypes}"
+                                                           SelectedCursorType="{Binding SelectedCursorType, Mode=TwoWay}"
+                                                           MinWidth="90"
+                                                           MaxWidth="180"
+                                                           Height="40"
+                                                           ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cursortype}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowFontSize}">
+                        <controls:FontSizePickerDropdown x:Name="FontSizePicker"
+                                                         SelectedFontSize="{Binding FontSize, Mode=TwoWay}"
                                                          Height="40"
-                                                         IsVisible="{Binding ShowCornerRadius}"
-                                                         ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cornerradius}"/>
+                                                         ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontsize}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:FontFamilyPickerDropdown x:Name="FontFamilyPicker"
-                                                       FontFamilyOptions="{Binding AvailableFontFamilies}"
-                                                       SelectedFontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
-                                                       MinWidth="180"
-                                                       MaxWidth="240"
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowTextStyle}">
+                        <Button Classes="toolbar-button"
+                                Classes.active="{Binding TextBold}"
+                                Click="OnTextBoldClick"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Togglebold}"
+                                Content="{x:Static theming:EditorIcons.FormatBold}"/>
+                    </controls:ToolbarItemHost>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowTextItalic}">
+                        <Button Classes="toolbar-button"
+                                Classes.active="{Binding TextItalic}"
+                                Click="OnTextItalicClick"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleitalic}"
+                                Content="{x:Static theming:EditorIcons.FormatItalic}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowStepType}">
+                        <controls:StepTypePickerDropdown x:Name="StepTypePicker"
+                                                         StepTypeOptions="{Binding AvailableStepTypes}"
+                                                         SelectedStepType="{Binding SelectedStepType, Mode=TwoWay}"
+                                                         Height="40"
+                                                         ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Steptype}"/>
+                    </controls:ToolbarItemHost>
+
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowStepStartNumber}">
+                        <controls:NumberPickerDropdown x:Name="StepStartPicker"
+                                                       NumberOptions="{Binding AvailableStepStartNumbers}"
+                                                       SelectedNumber="{Binding StepStartNumber, Mode=TwoWay}"
                                                        Height="40"
-                                                       IsVisible="{Binding ShowFontFamily}"
-                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontfamily}"/>
+                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Startingnumber}"/>
+                    </controls:ToolbarItemHost>
 
-                    <controls:TextHorizontalAlignmentPickerDropdown x:Name="TextHorizontalAlignmentPicker"
-                                                                    TextHorizontalAlignmentOptions="{Binding AvailableTextHorizontalAlignments}"
-                                                                    SelectedTextHorizontalAlignment="{Binding SelectedTextHorizontalAlignment, Mode=TwoWay}"
-                                                                    Height="40"
-                                                                    IsVisible="{Binding ShowTextHorizontalAlignment}"
-                                                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Horizontalalignment}"/>
-
-                    <controls:ArrowStylePickerDropdown x:Name="ArrowStylePicker"
-                                                       ArrowStyleOptions="{Binding AvailableArrowStyles}"
-                                                       SelectedArrowStyle="{Binding SelectedArrowStyle, Mode=TwoWay}"
-                                                       MinWidth="80"
-                                                       MaxWidth="160"
-                                                       Height="40"
-                                                       IsVisible="{Binding ShowArrowStyle}"
-                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Arrowstyle}"/>
-
-                    <controls:CursorTypePickerDropdown x:Name="CursorTypePicker"
-                                                       CursorTypeOptions="{Binding AvailableCursorTypes}"
-                                                       SelectedCursorType="{Binding SelectedCursorType, Mode=TwoWay}"
-                                                       MinWidth="90"
-                                                       MaxWidth="180"
-                                                       Height="40"
-                                                       IsVisible="{Binding ShowCursorType}"
-                                                       ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cursortype}"/>
-
-                    <controls:FontSizePickerDropdown x:Name="FontSizePicker"
-                                                     SelectedFontSize="{Binding FontSize, Mode=TwoWay}"
-                                                     Height="40"
-                                                     IsVisible="{Binding ShowFontSize}"
-                                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontsize}"/>
-
-                    <Button Classes="toolbar-button"
-                            Classes.active="{Binding TextBold}"
-                            Click="OnTextBoldClick"
-                            IsVisible="{Binding ShowTextStyle}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Togglebold}"
-                            Content="{x:Static theming:EditorIcons.FormatBold}"/>
-                    <Button Classes="toolbar-button"
-                            Classes.active="{Binding TextItalic}"
-                            Click="OnTextItalicClick"
-                            IsVisible="{Binding ShowTextItalic}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleitalic}"
-                            Content="{x:Static theming:EditorIcons.FormatItalic}"/>
-
-                    <controls:StepTypePickerDropdown x:Name="StepTypePicker"
-                                                     StepTypeOptions="{Binding AvailableStepTypes}"
-                                                     SelectedStepType="{Binding SelectedStepType, Mode=TwoWay}"
-                                                     Height="40"
-                                                     IsVisible="{Binding ShowStepType}"
-                                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Steptype}"/>
-
-                    <controls:NumberPickerDropdown x:Name="StepStartPicker"
-                                                   NumberOptions="{Binding AvailableStepStartNumbers}"
-                                                   SelectedNumber="{Binding StepStartNumber, Mode=TwoWay}"
-                                                   Height="40"
-                                                   IsVisible="{Binding ShowStepStartNumber}"
-                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Startingnumber}"/>
-
-                    <controls:StrengthSlider x:Name="EffectStrengthSlider"
-                                             Maximum="{Binding EffectStrengthMaximum}"
-                                             SelectedStrength="{Binding EffectStrength, Mode=TwoWay}"
-                                             IsVisible="{Binding ShowStrength}"
-                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowStrength}">
+                        <controls:StrengthSlider x:Name="EffectStrengthSlider"
+                                                 Maximum="{Binding EffectStrengthMaximum}"
+                                                 SelectedStrength="{Binding EffectStrength, Mode=TwoWay}"
+                                                 ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
+                    </controls:ToolbarItemHost>
 
                     <Border Background="Transparent"
                                     Width="40"
@@ -326,26 +360,30 @@
                                              IsVisible="{Binding ShowSpotlightBlur}"
                                              ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}"/>
 
-                    <Button Classes="toolbar-button"
-                            Classes.active="{Binding EffectEllipse}"
-                            Click="OnEffectEllipseClick"
-                            IsVisible="{Binding ShowEffectEllipse}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleellipseshape}"
-                            Content="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
-                    <Button Classes="toolbar-button"
-                            Classes.active="{Binding SpeechBalloonTail}"
-                            Click="OnSpeechBalloonTailClick"
-                            IsVisible="{Binding ShowSpeechBalloonTail}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}"
-                            Content="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowEffectEllipse}">
+                        <Button Classes="toolbar-button"
+                                Classes.active="{Binding EffectEllipse}"
+                                Click="OnEffectEllipseClick"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleellipseshape}"
+                                Content="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
+                    </controls:ToolbarItemHost>
+                    <controls:ToolbarItemHost IsVisible="{Binding ShowSpeechBalloonTail}">
+                        <Button Classes="toolbar-button"
+                                Classes.active="{Binding SpeechBalloonTail}"
+                                Click="OnSpeechBalloonTailClick"
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}"
+                                Content="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
+                    </controls:ToolbarItemHost>
                     <Grid IsVisible="{Binding ShowShadow}">
-                        <Button x:Name="ShadowToggleButton"
-                                Classes="toolbar-button"
-                                Classes.active="{Binding ShadowEnabled}"
-                                Click="OnShadowClick"
-                                PointerPressed="OnShadowPointerPressed"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_ToggleshadowShadowoptionsRightclick}"
-                                Content="{x:Static theming:EditorIcons.MenuTheme}"/>
+                        <controls:ToolbarItemHost>
+                            <Button x:Name="ShadowToggleButton"
+                                    Classes="toolbar-button"
+                                    Classes.active="{Binding ShadowEnabled}"
+                                    Click="OnShadowClick"
+                                    PointerPressed="OnShadowPointerPressed"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_ToggleshadowShadowoptionsRightclick}"
+                                    Content="{x:Static theming:EditorIcons.MenuTheme}"/>
+                        </controls:ToolbarItemHost>
                         <Popup x:Name="ShadowOptionsPopup"
                                PlacementTarget="{Binding #ShadowToggleButton}"
                                Placement="Bottom"

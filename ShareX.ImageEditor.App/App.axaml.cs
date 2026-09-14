@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.IO;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -31,8 +33,6 @@ using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using SkiaSharp;
-using System;
-using System.IO;
 
 namespace ShareX.ImageEditor.App
 {
@@ -51,7 +51,7 @@ namespace ShareX.ImageEditor.App
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                ImageEditorOptions options = new ImageEditorOptions();
+                ImageEditorOptions options = ImageEditorSettingsManager.Load();
 
 #if DEBUG
                 options.ShowExitConfirmation = false;
@@ -59,10 +59,12 @@ namespace ShareX.ImageEditor.App
 
                 EditorWindow window = new EditorWindow(options);
                 desktop.MainWindow = window;
+                window.Closed += (_, _) => ImageEditorSettingsManager.Save(options);
 
                 if (window.DataContext is MainViewModel vm)
                 {
                     vm.ShowFileMenu = true;
+                    vm.ShowSettingsMenuItem = true;
                     vm.ShowTaskButtons = false;
                     vm.UseContinueWorkflow = false;
                     vm.ShowBottomToolbar = true;

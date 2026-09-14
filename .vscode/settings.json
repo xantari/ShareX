@@ -1,3 +1,6 @@
 {
-    "dotnet.defaultSolution": "ShareX.sln"
+    "dotnet.defaultSolution": "ShareX.sln",
+    // Experimental previewer crashes with "assembly found in multiple locations" / ECONNRESET
+    // on shadow-copy, see https://github.com/AvaloniaUI/AvaloniaVS/issues/641
+    "avalonia.preview.useExperimentalHostApp": false
 }

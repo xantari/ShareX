@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build ShareX (x64)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/ShareX/ShareX.csproj",
+                "/property:GenerateFullPaths=true",
+                "/p:Configuration=Debug",
+                "/p:Platform=x64",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "build ShareX.ImageEditor.App (x64)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/ShareX.ImageEditor.App/ShareX.ImageEditor.App.csproj",
+                "/property:GenerateFullPaths=true",
+                "/p:Configuration=Debug",
+                "/p:Platform=x64",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "build ShareX (ARM64)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/ShareX/ShareX.csproj",
+                "/property:GenerateFullPaths=true",
+                "/p:Configuration=Debug",
+                "/p:Platform=ARM64",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "build ShareX.ImageEditor.App (ARM64)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/ShareX.ImageEditor.App/ShareX.ImageEditor.App.csproj",
+                "/property:GenerateFullPaths=true",
+                "/p:Configuration=Debug",
+                "/p:Platform=ARM64",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        }
+    ]
+}

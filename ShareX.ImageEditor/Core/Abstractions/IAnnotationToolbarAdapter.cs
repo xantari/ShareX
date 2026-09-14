@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Controls;
-using Avalonia.Media;
-using ShareX.ImageEditor.Core.Annotations;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using Avalonia.Controls;
+using Avalonia.Media;
+using ShareX.ImageEditor.Core.Annotations;
 
 namespace ShareX.ImageEditor.Core.Abstractions;
 
@@ -113,6 +113,8 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     ICommand SaveAsCommand { get; }
     ICommand ExitEditorCommand { get; }
     ICommand OpenRecentImageCommand { get; }
+    ICommand OpenSettingsDialogCommand { get; }
+    bool ShowSettingsMenuItem { get; }
     void SelectTool(EditorTool tool);
     void Undo();
     void Redo();

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
@@ -34,7 +35,6 @@ using ShareX.ImageEditor.Core.Editor;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Emoji;
-using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
@@ -86,10 +86,16 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private bool _showFileMenu;
 
         [ObservableProperty]
+        private bool _showSettingsMenuItem;
+
+        [ObservableProperty]
         private bool _showTaskButtons = true;
 
         [ObservableProperty]
         private bool _showBottomToolbar = true;
+
+        [ObservableProperty]
+        private bool _showToolbarButtonCaptions = true;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(AreToolbarsHidden))]
@@ -879,6 +885,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             _shadowOffsetY = _options.ShadowOffsetY;
             _textBold = _options.TextBold;
             _textItalic = _options.TextItalic;
+            _showToolbarButtonCaptions = _options.ShowToolbarButtonCaptions;
 
             // Get version from assembly
             var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
@@ -1028,6 +1035,40 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             Options.BackgroundPadding = value;
             UpdateCanvasProperties();
             NotifySmartPaddingPaddingChanged();
+        }
+
+        partial void OnShowToolbarButtonCaptionsChanged(bool value)
+        {
+            Options.ShowToolbarButtonCaptions = value;
+        }
+
+        [RelayCommand]
+        private void OpenSettingsDialog()
+        {
+            if (IsModalOpen)
+            {
+                return;
+            }
+
+            var dialog = new EditorSettingsDialogViewModel(
+                Options,
+                result =>
+                {
+                    Options.RememberWindowState = result.RememberWindowState;
+                    Options.ShowExitConfirmation = result.ShowExitConfirmation;
+                    Options.ZoomToFitOnOpen = result.ZoomToFitOnOpen;
+                    Options.QuickCrop = result.QuickCrop;
+                    Options.AutoCloseEditorOnTask = result.AutoCloseEditorOnTask;
+                    Options.AutoCopyImageToClipboard = result.AutoCopyImageToClipboard;
+                    Options.ShowInsertImageDialog = result.ShowInsertImageDialog;
+                    Options.ShowNotifications = result.ShowNotifications;
+                    ShowToolbarButtonCaptions = result.ShowToolbarButtonCaptions;
+                    CloseModalCommand.Execute(null);
+                },
+                () => CloseModalCommand.Execute(null));
+
+            ModalContent = dialog;
+            IsModalOpen = true;
         }
 
         partial void OnBackgroundSmartPaddingChanged(bool value)

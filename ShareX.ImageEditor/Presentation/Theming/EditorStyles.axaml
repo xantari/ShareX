@@ -1,7 +1,36 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls">
     <StyleInclude Source="avares://ShareX.ImageEditor/Presentation/Controls/EffectSlider.axaml" />
     <!-- Editor layout primitives -->
+    <Style Selector="controls|ToolbarItemHost">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel Spacing="2" HorizontalAlignment="Center">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Stretch"/>
+                    <TextBlock Text="{TemplateBinding EffectiveCaption}"
+                               IsVisible="{TemplateBinding IsCaptionVisible}"
+                               FontSize="10"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               MaxWidth="72"
+                               MaxLines="2"
+                               TextTrimming="CharacterEllipsis"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="controls|ToolbarItemHost:captions Button.toolbar-button">
+        <Setter Property="Width" Value="NaN"/>
+        <Setter Property="MinWidth" Value="40"/>
+        <Setter Property="Padding" Value="6,0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
     <Style Selector="TextBlock.dropdown-chevron">
         <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
         <Setter Property="RenderTransform" Value="rotate(0deg)"/>
@@ -89,12 +118,12 @@
 
         <Style Selector="^.top.hidden">
             <Setter Property="Opacity" Value="0"/>
-            <Setter Property="RenderTransform" Value="translateY(-28px)"/>
+            <Setter Property="RenderTransform" Value="translateY(-56px)"/>
         </Style>
 
         <Style Selector="^.bottom.hidden">
             <Setter Property="Opacity" Value="0"/>
-            <Setter Property="RenderTransform" Value="translateY(28px)"/>
+            <Setter Property="RenderTransform" Value="translateY(56px)"/>
         </Style>
     </Style>
 

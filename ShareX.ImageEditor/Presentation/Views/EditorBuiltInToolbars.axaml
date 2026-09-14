@@ -31,13 +31,15 @@
                 ClipToBounds="False"
                 IsHitTestVisible="{Binding ShowToolbars}">
             <StackPanel Orientation="Horizontal" Spacing="4" ClipToBounds="False">
-                <controls:ZoomPickerDropdown SelectedZoom="{Binding Zoom}"
-                                             ZoomChanged="OnZoomChanged"
-                                             ZoomToFitRequested="OnZoomToFitRequested"
-                                             Height="40"
-                                             ToolTip.Tip="{x:Static res:Strings.EditorView_ZoomCtrlWheel}"
-                                             ToolTip.Placement="Top"
-                                             ToolTip.VerticalOffset="-5"/>
+                <controls:ToolbarItemHost>
+                    <controls:ZoomPickerDropdown SelectedZoom="{Binding Zoom}"
+                                                 ZoomChanged="OnZoomChanged"
+                                                 ZoomToFitRequested="OnZoomToFitRequested"
+                                                 Height="40"
+                                                 ToolTip.Tip="{x:Static res:Strings.EditorView_ZoomCtrlWheel}"
+                                                 ToolTip.Placement="Top"
+                                                 ToolTip.VerticalOffset="-5"/>
+                </controls:ToolbarItemHost>
 
                 <Border Width="1"
                         Height="38"
@@ -94,86 +96,62 @@
                     </Button>
                 </Grid>
 
-                <Button Command="{Binding CopyCommand}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCopy}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding CopyCommand}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionCopy}"/>
+                </controls:ToolbarItemHost>
 
-                <Button Command="{Binding SaveCommand}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding SaveCommand}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionSave}"/>
+                </controls:ToolbarItemHost>
 
-                <Button Command="{Binding SaveAsCommand}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding SaveAsCommand}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionSaveAs}"/>
+                </controls:ToolbarItemHost>
 
-                <Button Command="{Binding PinToScreenCommand}"
-                        IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding PinToScreenCommand}"
+                            IsEnabled="{Binding HasPreviewImage}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"/>
+                </controls:ToolbarItemHost>
 
-                <Button Command="{Binding PrintCommand}"
-                        IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPrint}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding PrintCommand}"
+                            IsEnabled="{Binding HasPreviewImage}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionPrint}"/>
+                </controls:ToolbarItemHost>
 
-                <Button Command="{Binding UploadCommand}"
-                        IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
-                        IsVisible="{Binding ShowBottomToolbar}"
-                        ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}"
-                        ToolTip.Placement="Top"
-                        ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionUpload}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
-                </Button>
+                <controls:ToolbarItemHost IsVisible="{Binding ShowBottomToolbar}">
+                    <Button Classes="toolbar-button"
+                            Command="{Binding UploadCommand}"
+                            IsEnabled="{Binding HasPreviewImage}"
+                            ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}"
+                            ToolTip.Placement="Top"
+                            ToolTip.VerticalOffset="-5"
+                            Content="{x:Static editorTheming:EditorIcons.ActionUpload}"/>
+                </controls:ToolbarItemHost>
             </StackPanel>
         </Border>
     </Grid>

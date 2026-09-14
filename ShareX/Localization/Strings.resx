@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2588,6 +2591,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Show notifications</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Show toolbar button captions</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Show position and size info</value>
   </data>
@@ -2855,5 +2861,7 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Trim video...</value>
+  </data>
 </root>

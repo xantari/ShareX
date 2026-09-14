@@ -64,6 +64,7 @@ namespace ShareX.ImageEditor.Integration
         public bool AutoCopyImageToClipboard { get; set; } = false;
         public bool ShowInsertImageDialog { get; set; } = true;
         public bool ShowNotifications { get; set; } = true;
+        public bool ShowToolbarButtonCaptions { get; set; } = true;
         public List<ImageEditorToolbarItemOptions> ToolbarItems { get; set; } = new List<ImageEditorToolbarItemOptions>();
 
         // Shared

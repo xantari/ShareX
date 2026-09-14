@@ -9,6 +9,13 @@
 
 #nullable enable
 
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -24,13 +31,6 @@ using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using DrawingRectangle = System.Drawing.Rectangle;
 using DrawingSize = System.Drawing.Size;
 using WinForms = System.Windows.Forms;
@@ -687,6 +687,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_AutoCopyImageToClipboard, () => options.AutoCopyImageToClipboard, value => options.AutoCopyImageToClipboard = value),
                 Check(Strings.TaskSettingsWindow_ShowInsertImageDialog, () => options.ShowInsertImageDialog, value => options.ShowInsertImageDialog = value),
                 Check(Strings.TaskSettingsWindow_ShowNotifications, () => options.ShowNotifications, value => options.ShowNotifications = value),
+                Check(Strings.TaskSettingsWindow_ShowToolbarButtonCaptions, () => options.ShowToolbarButtonCaptions, value => options.ShowToolbarButtonCaptions = value),
                 Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowImageEditorToolbarEditor(options))));
     }
 
