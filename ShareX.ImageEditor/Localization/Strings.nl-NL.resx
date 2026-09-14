@@ -48,6 +48,9 @@
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>Afsluiten</value>
   </data>
+  <data name="AnnotationToolbar_SettingsEllipsis" xml:space="preserve">
+    <value>Instellingen...</value>
+  </data>
   <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
     <value>Opvulkleur</value>
   </data>
@@ -1355,6 +1358,36 @@ Het klembord bevat geen afbeelding.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Groep beginnen</value>
+  </data>
+  <data name="EditorSettingsDialogView_Title" xml:space="preserve">
+    <value>Afbeeldingseditor-instellingen</value>
+  </data>
+  <data name="EditorSettingsDialogView_RememberWindowState" xml:space="preserve">
+    <value>Venstergrootte en -status onthouden</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowExitConfirmation" xml:space="preserve">
+    <value>Bevestiging bij afsluiten tonen</value>
+  </data>
+  <data name="EditorSettingsDialogView_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Passend maken bij openen</value>
+  </data>
+  <data name="EditorSettingsDialogView_QuickCrop" xml:space="preserve">
+    <value>Snel bijsnijden</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Editor automatisch sluiten na taak</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Afbeelding automatisch naar klembord kopiëren</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowInsertImageDialog" xml:space="preserve">
+    <value>Dialoogvenster voor afbeelding invoegen tonen</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowNotifications" xml:space="preserve">
+    <value>Meldingen tonen</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Bijschriften bij knoppen tonen</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Annuleren</value>

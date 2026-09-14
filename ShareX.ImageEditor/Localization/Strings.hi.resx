@@ -48,6 +48,9 @@
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>बाहर निकलें</value>
   </data>
+  <data name="AnnotationToolbar_SettingsEllipsis" xml:space="preserve">
+    <value>सेटिंग्स...</value>
+  </data>
   <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
     <value>भराव रंग</value>
   </data>
@@ -1355,6 +1358,36 @@
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>समूह आरंभ करें</value>
+  </data>
+  <data name="EditorSettingsDialogView_Title" xml:space="preserve">
+    <value>इमेज एडिटर सेटिंग्स</value>
+  </data>
+  <data name="EditorSettingsDialogView_RememberWindowState" xml:space="preserve">
+    <value>विंडो का आकार और स्थिति याद रखें</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowExitConfirmation" xml:space="preserve">
+    <value>बाहर निकलने की पुष्टि दिखाएं</value>
+  </data>
+  <data name="EditorSettingsDialogView_ZoomToFitOnOpen" xml:space="preserve">
+    <value>खोलते समय फ़िट करने के लिए ज़ूम करें</value>
+  </data>
+  <data name="EditorSettingsDialogView_QuickCrop" xml:space="preserve">
+    <value>त्वरित क्रॉप</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>कार्य के बाद संपादक को स्वतः बंद करें</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>छवि को स्वतः क्लिपबोर्ड में कॉपी करें</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowInsertImageDialog" xml:space="preserve">
+    <value>छवि सम्मिलित करें संवाद दिखाएं</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowNotifications" xml:space="preserve">
+    <value>सूचनाएं दिखाएं</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>बटन कैप्शन दिखाएं</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>रद्द करें</value>

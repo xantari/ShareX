@@ -48,6 +48,9 @@
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>Esci</value>
   </data>
+  <data name="AnnotationToolbar_SettingsEllipsis" xml:space="preserve">
+    <value>Impostazioni...</value>
+  </data>
   <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
     <value>Colore riempimento</value>
   </data>
@@ -1355,6 +1358,36 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Inizia gruppo</value>
+  </data>
+  <data name="EditorSettingsDialogView_Title" xml:space="preserve">
+    <value>Impostazioni dell'editor immagini</value>
+  </data>
+  <data name="EditorSettingsDialogView_RememberWindowState" xml:space="preserve">
+    <value>Ricorda dimensioni e stato della finestra</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowExitConfirmation" xml:space="preserve">
+    <value>Mostra conferma di uscita</value>
+  </data>
+  <data name="EditorSettingsDialogView_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Adatta alla finestra all'apertura</value>
+  </data>
+  <data name="EditorSettingsDialogView_QuickCrop" xml:space="preserve">
+    <value>Ritaglio rapido</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Chiudi automaticamente l'editor dopo l'attività</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Copia automaticamente l'immagine negli appunti</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowInsertImageDialog" xml:space="preserve">
+    <value>Mostra finestra di inserimento immagine</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowNotifications" xml:space="preserve">
+    <value>Mostra notifiche</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Mostra didascalie dei pulsanti</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Annulla</value>

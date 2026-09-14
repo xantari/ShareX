@@ -48,6 +48,9 @@
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>Ukončit</value>
   </data>
+  <data name="AnnotationToolbar_SettingsEllipsis" xml:space="preserve">
+    <value>Nastavení...</value>
+  </data>
   <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
     <value>Barva výplně</value>
   </data>
@@ -1355,6 +1358,36 @@ Schránka neobsahuje obrázek.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Začít skupinu</value>
+  </data>
+  <data name="EditorSettingsDialogView_Title" xml:space="preserve">
+    <value>Nastavení editoru obrázků</value>
+  </data>
+  <data name="EditorSettingsDialogView_RememberWindowState" xml:space="preserve">
+    <value>Zapamatovat velikost a stav okna</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowExitConfirmation" xml:space="preserve">
+    <value>Zobrazit potvrzení při ukončení</value>
+  </data>
+  <data name="EditorSettingsDialogView_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Přizpůsobit při otevření</value>
+  </data>
+  <data name="EditorSettingsDialogView_QuickCrop" xml:space="preserve">
+    <value>Rychlé oříznutí</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Automaticky zavřít editor po dokončení úlohy</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Automaticky kopírovat obrázek do schránky</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowInsertImageDialog" xml:space="preserve">
+    <value>Zobrazit dialog vložení obrázku</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowNotifications" xml:space="preserve">
+    <value>Zobrazit oznámení</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Zobrazit popisky tlačítek</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Zrušit</value>

@@ -48,6 +48,9 @@
   <data name="AnnotationToolbar_Exit" xml:space="preserve">
     <value>Thoát</value>
   </data>
+  <data name="AnnotationToolbar_SettingsEllipsis" xml:space="preserve">
+    <value>Cài đặt...</value>
+  </data>
   <data name="AnnotationToolbar_Fillcolor" xml:space="preserve">
     <value>Màu tô</value>
   </data>
@@ -1355,6 +1358,36 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Bắt đầu nhóm</value>
+  </data>
+  <data name="EditorSettingsDialogView_Title" xml:space="preserve">
+    <value>Cài đặt trình chỉnh sửa ảnh</value>
+  </data>
+  <data name="EditorSettingsDialogView_RememberWindowState" xml:space="preserve">
+    <value>Ghi nhớ kích thước và trạng thái cửa sổ</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowExitConfirmation" xml:space="preserve">
+    <value>Hiển thị xác nhận khi thoát</value>
+  </data>
+  <data name="EditorSettingsDialogView_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Thu phóng vừa khung khi mở</value>
+  </data>
+  <data name="EditorSettingsDialogView_QuickCrop" xml:space="preserve">
+    <value>Cắt nhanh</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Tự động đóng trình chỉnh sửa sau khi hoàn thành tác vụ</value>
+  </data>
+  <data name="EditorSettingsDialogView_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Tự động sao chép ảnh vào bảng nhớ tạm</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowInsertImageDialog" xml:space="preserve">
+    <value>Hiển thị hộp thoại chèn ảnh</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowNotifications" xml:space="preserve">
+    <value>Hiển thị thông báo</value>
+  </data>
+  <data name="EditorSettingsDialogView_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Hiển thị chú thích nút</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Hủy</value>

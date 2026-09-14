@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Bildirimleri göster</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Araç çubuğu düğme başlıklarını göster</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Konum ve boyut bilgisini göster</value>
   </data>
@@ -2852,5 +2858,7 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videoyu kırp...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Videoyu kırp...</value>
+  </data>
 </root>

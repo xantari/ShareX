@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>顯示通知</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>顯示工具列按鈕說明文字</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>顯示位置和大小資訊</value>
   </data>
@@ -2852,5 +2858,7 @@
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>你的系統管理員已停用上傳功能。</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>剪輯影片...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>剪輯影片...</value>
+  </data>
 </root>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Tampilkan notifikasi</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Tampilkan keterangan tombol bilah alat</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Tampilkan informasi posisi dan ukuran</value>
   </data>
@@ -2852,5 +2858,7 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Admin sistem Anda menonaktifkan fitur unggah.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Potong video...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Potong video...</value>
+  </data>
 </root>

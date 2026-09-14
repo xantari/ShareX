@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Benachrichtigungen anzeigen</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Symbolleisten-Schaltflächenbeschriftungen anzeigen</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Positions- und Größeninformationen anzeigen</value>
   </data>
@@ -2851,5 +2857,7 @@ Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.<
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ihr Systemadministrator hat diese Funktion ausgeschaltet.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video zuschneiden...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Video zuschneiden...</value>
+  </data>
 </root>

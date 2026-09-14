@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>نمایش اعلان‌ها</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>نمایش عنوان دکمه‌های نوار ابزار</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>نمایش اطلاعات موقعیت و اندازه</value>
   </data>
@@ -2852,5 +2858,7 @@ You can later disable it from "After ضبط tasks" منو.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the بارگذاری feature.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>برش ویدئو...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>برش ویدئو...</value>
+  </data>
 </root>

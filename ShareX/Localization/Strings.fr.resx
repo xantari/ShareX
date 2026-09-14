@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Afficher les notifications</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Afficher les légendes des boutons de la barre d'outils</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Afficher les informations de position et de taille</value>
   </data>
@@ -2852,5 +2858,7 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Votre administrateur système a désactivé la fonctionnalité de mise en ligne.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Découper la vidéo...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Découper la vidéo...</value>
+  </data>
 </root>

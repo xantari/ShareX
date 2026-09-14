@@ -42,12 +42,13 @@
                                     <Border Width="1"
                                             Background="{DynamicResource ShareX.Brush.Separator}"
                                             IsVisible="{Binding IsGroupSeparatorVisible}"/>
+                                    <controls:ToolbarItemHost Caption="{Binding ToolTip}"
+                                                              IsVisible="{Binding IsFileMenu}">
                                     <Button Classes="toolbar-button"
                                             ToolTip.Tip="{Binding ToolTip}"
                                             x:Name="FileMenuButton"
                                             MinWidth="54"
-                                            HorizontalContentAlignment="Stretch"
-                                            IsVisible="{Binding IsFileMenu}">
+                                            HorizontalContentAlignment="Stretch">
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <TextBlock Grid.Column="0"
                                                        Text="{Binding Icon}"
@@ -123,6 +124,7 @@
                                             </MenuFlyout>
                                         </Button.Flyout>
                                     </Button>
+                                    </controls:ToolbarItemHost>
                                     <controls:ToolbarItemHost Caption="{Binding ToolTip}"
                                                               IsVisible="{Binding IsRegularButton}">
                                         <Button Classes="toolbar-button"

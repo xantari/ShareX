@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Hiện thông báo</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Hiển thị chú thích nút trên thanh công cụ</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Hiển thị thông tin vị trí và kích thước</value>
   </data>
@@ -2852,5 +2858,7 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Quản trị viên hệ thống của bạn đã tắt tính năng tải lên.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cắt video...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Cắt video...</value>
+  </data>
 </root>

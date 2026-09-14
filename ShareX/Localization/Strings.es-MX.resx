@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Mostrar notificaciones</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Mostrar leyendas de los botones de la barra de herramientas</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Mostrar información de posición y tamaño</value>
   </data>
@@ -2851,5 +2857,7 @@ Puedes desactivarlo más adelante desde el menú "Tareas después de capturar".<
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>El administrador de tu sistema desactivó la característica de carga.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Recortar video...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Recortar video...</value>
+  </data>
 </root>

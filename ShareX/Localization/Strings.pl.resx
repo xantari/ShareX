@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root"
+    xmlns=""
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -2585,6 +2588,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
     <value>Pokaż powiadomienia</value>
   </data>
+  <data name="TaskSettingsWindow_ShowToolbarButtonCaptions" xml:space="preserve">
+    <value>Pokaż podpisy przycisków paska narzędzi</value>
+  </data>
   <data name="TaskSettingsWindow_ShowPositionAndSizeInfo" xml:space="preserve">
     <value>Pokaż informacje o położeniu i rozmiarze</value>
   </data>
@@ -2852,5 +2858,7 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administrator systemu wyłączył funkcję przesyłania.</value>
   </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Przytnij wideo...</value></data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Przytnij wideo...</value>
+  </data>
 </root>
