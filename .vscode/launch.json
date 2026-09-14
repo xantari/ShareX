@@ -2,6 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "C#: ShareX",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/ShareX/ShareX.csproj"
+        },
+        {
+            "name": "C#: ShareX.ImageEditor.App",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/ShareX.ImageEditor.App/ShareX.ImageEditor.App.csproj"
+        },
+        {
             "name": "C#: ShareX (x64)",
             "type": "coreclr",
             "request": "launch",
