@@ -197,6 +197,9 @@ namespace ShareX.ImageEditor.Integration
 
         // Image effects
         public List<string> RecentEffects { get; set; } = new List<string>();
+
+        // Non-empty default: without Replace, Json.NET appends onto the seeded list instead of overwriting it.
+        [JsonProperty(ObjectCreationHandling = ObjectCreationHandling.Replace)]
         public List<string> FavoriteEffects { get; set; } = new List<string>(DefaultFavoriteEffects);
     }
 }
